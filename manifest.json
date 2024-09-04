@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Stream Saver",
+    "description": "Save the YouTube stream on your device by re-encoding it while playing the video",
+    "version": "1",
+    "action": {
+        "default_popup": "./ui/index.html"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "main.js"
+            ],
+            "matches": [
+                "https://*.youtube.com/*"
+            ]
+        }
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{eb5affd7-77c8-48ca-bf98-5fbe1d72bedf}"
+        }
+    }
+}

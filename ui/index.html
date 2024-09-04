@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Stream Saver</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="flex hcenter gap" style="margin-bottom: 20px;">
+            <img style="width: 48px; height: 48px;" src="./icons/svg.svg">
+            <h1 style="margin: 0px;">YouTube Stream Saver</h1>
+        </div>
+        <p>Record YouTube's video stream and save the result on your device</p>
+    </header>
+    <main>
+        <div class="card" id="requireAccess" style="background-color: darkred; margin-bottom: 20px;">
+            <h2>The extension doesn't have access to YouTube</h2>
+            <p>Please grant the authorization to read the YouTube webpage to make it work.</p>
+            <button id="grantAccess">Grant authorization</button>
+        </div>
+        <div data-result-show="0">
+            <div class="card">
+                <h2 style="margin-top: 0px;">Settings:</h2>
+                <label class="flex hcenter gap">
+                    Video bitrate (in bit/s):
+                    <input data-settings="videoBitsPerSecond" data-default-value="2500000" type="number">
+                </label><br>
+                <label class="flex hcenter gap">
+                    Audio bitrate in (bit/s):
+                    <input data-settings="audioBitsPerSecond" data-default-value="192000" type="number">
+                </label><br>
+                <label class="flex hcenter gap">
+                    Keyframes in output video: <input data-settings="videoKeyFrameIntervalDuration" data-default-value="5" type="number">
+                </label>
+                <p>Output codec:</p>
+                <select id="resolution"></select>
+                <p>Output container:</p>
+                <select id="container"></select>
+            </div><br>
+            <button id="start">Start recording</button>
+        </div>
+        <div data-result-show="1" style="display: none;">
+            <h2>The video is being recorded...</h2>
+            <p>The recording will automatically stop at the end of the video.</p><br>
+            <button id="stop">Stop recording</button>
+        </div>
+        <br><br>
+        <i>Icons from Microsoft's <a href="https://github.com/microsoft/fluentui-system-icons/tree/main" target="_blank">Fluent UI System Icons</a>. This project is in no way affiliated with YouTube, that is a trademark of Google.</i>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>

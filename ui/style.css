@@ -1,0 +1,53 @@
+:root {
+    --background: #151515;
+    --text: #fafafa;
+    --card: #313131;
+    --input: #515151;
+    --accent: #167b65;
+    --font: "Work Sans", sans-serif;
+}
+body {
+    padding: 10px;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font);
+}
+.card {
+    padding: 15px 10px;
+    background-color: var(--card);
+    border-radius: 8px;
+}
+.flex {
+    display: flex;
+}
+.hcenter {
+    align-items: center;
+}
+.gap {
+    gap: 10px;
+}
+button, input, select {
+    background-color: var(--accent);
+    border: 1px solid var(--text);
+    border-radius: 8px;
+    font-family: var(--font);
+    transition: filter 0.2s ease-in-out;
+    width: 100%;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    color: var(--text);
+    padding: 10px;
+}
+button:hover {
+    cursor: pointer;
+    filter: brightness(125%);
+}
+button:active {
+    filter: brightness(150%);
+}
+input, select {
+    background-color: var(--input);
+}
+a {
+    color: var(--text);
+}
